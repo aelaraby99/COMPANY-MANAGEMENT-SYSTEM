@@ -1,0 +1,52 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+<div class="d-flex justify-content-center align-content-center">
+	<div class="col-lg-6 col-md-12 card-back p-5">
+		<h4 class="mb-4 pb-3">Sign Up</h4>
+		<form asp-action="SignUp" class="pb-5">
+			<div class="nondot" asp-validation-summary="All"></div>
+			<div class="form-group mt-2">
+				<input asp-for="FName" class="form-style" placeholder="First Name">
+				<i class="input-icon fa-solid fa-user"></i>
+				<span class="text-danger" asp-validation-for="FName"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input asp-for="LName" class="form-style" placeholder="Last Name">
+				<i class="input-icon fa-solid fa-user"></i>
+				<span class="text-danger" asp-validation-for="LName"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input asp-for="Email" class="form-style" placeholder="Your Email">
+				<i class="input-icon fa-solid fa-at"></i>
+				<span class="text-danger" asp-validation-for="Email"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input asp-for="Password" class="form-style" placeholder="Your Password">
+				<i class="input-icon fa-solid fa-lock"></i>
+				<span class="text-danger" asp-validation-for="Password"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input asp-for="ConfirmPassword" class="form-style" placeholder="Confirm Password">
+				<i class="input-icon fa-solid fa-lock"></i>
+				<span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input required asp-for="IsAgree" />
+				<span class="text-danger" asp-validation-for="IsAgree"></span>
+				<span > I Agree to the Terms and Conditions</span>
+			</div>
+			<div class="form-group mt-1">
+				<input type="submit" value="Sign Up" class="btn mt-4" />
+			</div>
+			<p class="mt-4 text-center">Do you have an account? <a asp-action="SignIn" class="link">Login Now!</a></p>
+		</form>
+	</div>
+</div>
+@section ValidationSection{
+	<partial name="_ValidationScriptsPartial" />
+}
+
+

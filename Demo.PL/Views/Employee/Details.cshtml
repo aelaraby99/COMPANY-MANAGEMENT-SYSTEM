@@ -1,0 +1,13 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div>
+    <partial name="PartialViews/_DeleteDetailsPartial" />
+   <div class="form-group d-flex justify-content-around align-items-center">  
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-success  col-2">Edit</a>
+        <a asp-action="Index" class="ml-5 btn btn-outline-dark">Show Employees</a>
+   </div>
+</div>

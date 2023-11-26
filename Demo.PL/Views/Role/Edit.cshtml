@@ -1,0 +1,19 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Role</h1>
+<br />
+<br />
+<form asp-action="Edit" enctype="multipart/form-data">
+    <partial name="PartialViews/CreateEditPartial" />
+    <div class="form-group ">
+        <button type="submit" class="btn btn-primary col-2 offset-1 ">Save Changes</button>
+        <a asp-action="Index" class="btn btn-light col-2 offset-6">Cancel</a>
+    </div>
+</form>
+@section ValidationSection{
+    <partial name="_ValidationScriptsPartial" />
+}

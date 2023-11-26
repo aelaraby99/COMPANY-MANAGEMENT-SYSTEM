@@ -1,0 +1,45 @@
+﻿@model SignInViewModel
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="d-flex justify-content-center align-content-center p-5 mt-5">
+	<div class="col-lg-6 col-md-12 card-back p-5">
+		<h4>Log In</h4>
+		<form asp-action="SignIn" class="pt-4 ">
+			<div asp-validation-summary="All" class="nondot"></div>
+			<div class="form-group mt-2">
+				<input asp-for="Email" class="form-style" placeholder="UserName or Email">
+				<i class="input-icon fa-solid fa-at"></i>
+				<span class="text-danger" asp-validation-for="Email"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input asp-for="Password" class="form-style" placeholder="Your Password">
+				<i class="input-icon fa-solid fa-lock"></i>
+				<span class="text-danger" asp-validation-for="Password"></span>
+			</div>
+			<div class="form-group row mt-3 d-flex justify-content-between align-content-center">
+				
+				<div class="col-5  align-items-center">
+					<input asp-for="RememberMe" class="mr-2" />
+					<span> Remember Me</span>
+				</div>
+				<div class="col-5">
+					<p class="text-center"><a asp-action="ForgetPassword" class="link">Forgot your password?</a></p>
+				</div>
+			</div>
+			<div class="form-group mt-4">
+				<input type="submit" value="Login" class="btn mt-4" />
+			</div>
+			
+			<div class="form-group">
+				<p class="mb-3 mt-4 text-center">Don't have an account? <a asp-action="SignUp" class="link">Register Now!</a></p>
+			</div>
+		</form>
+	</div>
+</div>
+@section ValidationSection{
+	<partial name="_ValidationScriptsPartial" />
+}
+
